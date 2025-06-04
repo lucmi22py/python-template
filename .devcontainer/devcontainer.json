@@ -7,8 +7,10 @@
         "dockerfile": "Dockerfile"
     },
     "features": {
-        "ghcr.io/devcontainers/features/node:1": {}
-    }
+        "ghcr.io/devcontainers/features/node:1": {},
+        "ghcr.io/anthropics/devcontainer-features/claude-code:latest": {},
+        "ghcr.io/devcontainers/features/github-cli:1": {}
+    },
 
     // Features to add to the dev container. More info: https://containers.dev/features.
     // "features": {},
@@ -20,7 +22,21 @@
     // "postCreateCommand": "uname -a",
 
     // Configure tool-specific properties.
-    // "customizations": {},
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "python.testing.unittestEnabled": false,
+                "python.testing.pytestEnabled": true,
+                "python.analysis.typeCheckingMode": "standard",
+                "terminal.integrated.copyOnSelection": true,
+                "terminal.integrated.rightClickBehavior": "paste"
+            },
+            "extensions": [
+                "ms-python.python",
+                "charliermarsh.ruff"
+            ]
+        }
+    }
 
     // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
     // "remoteUser": "root"
