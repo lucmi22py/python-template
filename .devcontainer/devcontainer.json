@@ -19,7 +19,7 @@
     // "forwardPorts": [],
 
     // Use 'postCreateCommand' to run commands after the container is created.
-    // "postCreateCommand": "uname -a",
+    "postCreateCommand": "bash .devcontainer/init.sh",
 
     // Configure tool-specific properties.
     "customizations": {
@@ -33,7 +33,11 @@
             },
             "extensions": [
                 "ms-python.python",
-                "charliermarsh.ruff"
+                "charliermarsh.ruff",
+                "mhutchie.git-graph",
+                "bierner.markdown-mermaid",
+                "bierner.markdown-preview-github-styles",
+                "streetsidesoftware.code-spell-checker"
             ]
         }
     }

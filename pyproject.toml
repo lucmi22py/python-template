@@ -4,4 +4,45 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
+# For private repositories
+classifiers = ["Private :: Do Not Upload"]
 dependencies = []
+
+# Set scripts if need
+# [project.scripts]
+# python-template = "python_template:main"
+# pt = "python_template:main"
+
+[tool.ruff]
+line-length = 119
+target-version = "py312"
+exclude = ["docs/**"]
+lint.select = ["E","F","I","UP","B","C90","SIM","PL","NPY"]
+preview = true
+
+# [tool.pyright]
+# venvPath = "."
+# venv = ".venv"
+
+# [build-system]
+# requires        = ["uv_build>=0.8.4,<0.9.0"]
+# build-backend   = "uv_build"
+# 
+# [tool.uv.build-backend]
+# Need rename module-name.
+# module-name     = "my_example"
+# module-root     = "src"
+
+# For github by private repository.
+# [[tool.uv.index]]
+# name        = "github"
+# url         = "https://pip.pkg.github.com/OWNER"
+# publish-url = "https://upload.pypi.org/legacy/"
+# explicit    = true
+
+# For gitlab by self host.
+# [[tool.uv.index]]
+# name        = "gitlab"
+# url         = "https://gitlab.example.com/api/v4/projects/123/packages/pypi/simple"
+# publish-url = "https://gitlab.example.com/api/v4/projects/123/packages/pypi"
+# explicit    = true

@@ -1,0 +1,27 @@
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.5.0
+    hooks:
+      - id: ruff
+      - id: ruff-format
+
+  # pyright type checker
+  - repo: https://github.com/RobertCraigie/pyright-python
+    rev: v1.1.403
+    hooks:
+      - id: pyright
+        # args: ["--project", "."]  # 必要なら明示
+
+  # - repo: local
+  #   hooks:
+  #     - id: ty
+  #       name: ty (type checking)
+  #       entry: uvx ty check --respect-ignore-files --output-format=concise
+  #       language: system
+  #       pass_filenames: false
+  #       types: [python]
+
+  - repo: https://github.com/jorisroovers/gitlint
+    rev: v0.19.1
+    hooks:
+      - id: gitlint

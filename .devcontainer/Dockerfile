@@ -5,4 +5,6 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends \
         ripgrep \
         fd-find \
+        python-is-python3 \
+    && ln -s /usr/bin/fdfind /usr/local/bin/fd \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
